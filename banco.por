@@ -5,6 +5,7 @@ funcao inicio()
 {
       inteiro menu
       real saldo, saque, deposito
+	cadeia extrato = " ", controle
 
       menu = 0
       saldo = 0
@@ -46,8 +47,27 @@ funcao inicio()
   escreva("Depostivo realizado com sucesso!\n")
   pare
   caso 3:
- 
+ escreva("Digite o valor para depositar: ")
+        leia(deposito)
+        enquanto(deposito<0){
+          escreva("Valor invalido digite novamente: ")
+          leia(deposito)
+        }
+        saldo = saldo + deposito
+        extrato = extrato + "DEPOSITO ------------ R$" + deposito + "\n"
+        escreva("Deposito realizado com sucesso!\n")
+        escreva("Aperte ENTER para continuar")
+          leia(controle)
+          limpa()
   pare
+  caso 4:
+        escreva(extrato)
+         escreva("Aperte ENTER para continuar")
+          leia(controle)
+          limpa()
+        pare
+  
+  
   }
       }
      
